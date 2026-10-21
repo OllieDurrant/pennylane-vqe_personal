@@ -1,8 +1,8 @@
 # Variational Quantum Eigensolver with PennyLane
 
-A small independent summer project exploring the variational quantum eigensolver (VQE) for molecular ground-state energy estimation. I used [PennyLane](https://pennylane.ai/) to compare different parameterised circuits, experiment with noisy simulations and try running circuits on IBM quantum hardware.
+A small independent summer project exploring the variational quantum eigensolver (VQE) for molecular ground-state energy estimation. I used [PennyLane](https://pennylane.ai/) to compare different parameterised circuits (different ansatze for hardware efficiency and chemical inituition), experiment with noisy simulations and try running circuits on IBM quantum hardware.
 
-The main aim was to get more familiar with quantum chemistry algorithms and the practical difficulties of running them, rather than to produce a comprehensive benchmark.
+The main aim was to get more familiar with quantum chemistry algorithms and the practical difficulties of running them, rather than to produce a comprehensive benchmark or markable university project (that comes later).
 
 ## What it does
 
@@ -19,13 +19,13 @@ I experimented with four ansätze:
 - `StronglyEntanglingLayers` (`SEL`)
 - `ParticleConservingU2` (`PCU2`)
 
-The script also includes optional frozen-core calculations, circuit resource estimates, energy-landscape plots, a basic depolarising-noise experiment and some exploratory tests of gradient variance with circuit depth. There is an optional IBM Quantum execution section using the PennyLane–Qiskit interface. I successfully ran earlier H2 circuits on IBM hardware, but did not retain the measured results, so there are no hardware benchmarks included here.
+The script also includes optional frozen-core calculations, circuit resource estimates, energy-landscape plots, a basic depolarising-noise experiment and some exploratory tests of gradient variance with circuit depth. There is an optional IBM Quantum execution section using the PennyLane–Qiskit interface. I successfully ran earlier H2 circuits on IBM hardware, but did not retain the measured results, so there are no hardware benchmarks included here. Unfortunately wasted my time on a LiH incomplete run. 
 
 ## Example result
 
 ![Exploratory H2 VQE convergence comparison](H2_noise_ansatz_comparison_300limit.png)
 
-An exploratory H2 convergence comparison from the project. The different circuits show quite different optimisation behaviour, especially the more general `StronglyEntanglingLayers` ansatz. This is not a controlled comparison of ansatz performance: the circuit structures, initial states and effective noise treatment differ.
+An exploratory H2 convergence comparison from the project. The different circuits show quite different optimisation behaviour, especially the more general `StronglyEntanglingLayers` ansatz. This is not a controlled comparison of ansatz performance: the circuit structures, initial states and effective noise treatment differ. 
 
 ## Running the code
 
@@ -56,4 +56,4 @@ There are a few important caveats to interpreting the results:
 - The ansätze differ in parameterisation and initialisation, so the plots should not be taken as evidence that one is generally better than another.
 - Some of the analysis sections are experiments I added while learning and have not been systematically validated.
 
-The repository is mainly a record of what I tried and learned while getting to grips with VQE, quantum chemistry simulations and real quantum hardware.
+The repository is mainly a record of what I tried and learned while getting to grips with VQE, quantum chemistry simulations and real quantum hardware. Do not take it too seriously! A larger more complete VQE project is in the works. 
